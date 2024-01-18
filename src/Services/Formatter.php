@@ -102,7 +102,7 @@ class Formatter
 
                 $formattedResponse[$i][] = [
                     'date'          => $responseItem['date'],
-                    'name'          => $responseItem['name'],
+                    'name'          => is_string($responseItem['name']) ? $responseItem['name'] : '',
                     'status_id'     => (float) ($responseItem['status_id_v2'] ?? $responseItem['status_id']),
                     'type'          => $responseItem['type'] ?? 'event',
                     'name_internal' => $responseItem['name_balikobot'] ?? $responseItem['name'],
