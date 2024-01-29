@@ -154,7 +154,7 @@ class PackageTransportCostCollection implements ArrayAccess, Countable, Iterator
      *
      * @return bool
      */
-    public function offsetExists($key)
+    public function offsetExists($key): bool
     {
         return array_key_exists($key, $this->costs);
     }
@@ -166,7 +166,7 @@ class PackageTransportCostCollection implements ArrayAccess, Countable, Iterator
      *
      * @return \Inspirum\Balikobot\Model\Values\PackageTransportCost
      */
-    public function offsetGet($key)
+    public function offsetGet($key): PackageTransportCost
     {
         return $this->costs[$key];
     }
@@ -179,7 +179,7 @@ class PackageTransportCostCollection implements ArrayAccess, Countable, Iterator
      *
      * @return void
      */
-    public function offsetSet($key, $value)
+    public function offsetSet($key, $value): void
     {
         $this->validateShipper($value);
 
@@ -193,7 +193,7 @@ class PackageTransportCostCollection implements ArrayAccess, Countable, Iterator
      *
      * @return void
      */
-    public function offsetUnset($key)
+    public function offsetUnset($key): void
     {
         unset($this->costs[$key]);
     }

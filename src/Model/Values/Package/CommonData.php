@@ -14,7 +14,7 @@ trait CommonData
      *
      * @return void
      */
-    abstract public function offsetSet($key, $value);
+    abstract public function offsetSet($key, $value): void;
 
     /**
      * Get an item at a given offset
@@ -23,6 +23,7 @@ trait CommonData
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     abstract public function offsetGet($key);
 
     /**
@@ -32,7 +33,7 @@ trait CommonData
      *
      * @return bool
      */
-    abstract public function offsetExists($key);
+    abstract public function offsetExists($key): bool;
 
     /**
      * Set EID

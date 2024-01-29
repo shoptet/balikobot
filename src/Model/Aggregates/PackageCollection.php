@@ -98,7 +98,7 @@ class PackageCollection implements ArrayAccess, Countable, IteratorAggregate
      *
      * @return bool
      */
-    public function offsetExists($key)
+    public function offsetExists($key): bool
     {
         return array_key_exists($key, $this->packages);
     }
@@ -110,7 +110,7 @@ class PackageCollection implements ArrayAccess, Countable, IteratorAggregate
      *
      * @return \Inspirum\Balikobot\Model\Values\Package
      */
-    public function offsetGet($key)
+    public function offsetGet($key): Package
     {
         return $this->packages[$key];
     }
@@ -123,7 +123,7 @@ class PackageCollection implements ArrayAccess, Countable, IteratorAggregate
      *
      * @return void
      */
-    public function offsetSet($key, $value)
+    public function offsetSet($key, $value): void
     {
         $this->packages[$key] = $value;
     }
@@ -135,7 +135,7 @@ class PackageCollection implements ArrayAccess, Countable, IteratorAggregate
      *
      * @return void
      */
-    public function offsetUnset($key)
+    public function offsetUnset($key): void
     {
         unset($this->packages[$key]);
     }

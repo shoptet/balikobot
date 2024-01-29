@@ -156,7 +156,7 @@ class OrderedPackageCollection implements ArrayAccess, Countable, IteratorAggreg
      *
      * @return bool
      */
-    public function offsetExists($key)
+    public function offsetExists($key): bool
     {
         return array_key_exists($key, $this->packages);
     }
@@ -168,7 +168,7 @@ class OrderedPackageCollection implements ArrayAccess, Countable, IteratorAggreg
      *
      * @return \Inspirum\Balikobot\Model\Values\OrderedPackage
      */
-    public function offsetGet($key)
+    public function offsetGet($key): OrderedPackage
     {
         return $this->packages[$key];
     }
@@ -181,7 +181,7 @@ class OrderedPackageCollection implements ArrayAccess, Countable, IteratorAggreg
      *
      * @return void
      */
-    public function offsetSet($key, $value)
+    public function offsetSet($key, $value): void
     {
         $this->validateShipper($value);
 
@@ -195,7 +195,7 @@ class OrderedPackageCollection implements ArrayAccess, Countable, IteratorAggreg
      *
      * @return void
      */
-    public function offsetUnset($key)
+    public function offsetUnset($key): void
     {
         unset($this->packages[$key]);
     }
