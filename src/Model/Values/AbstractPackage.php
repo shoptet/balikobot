@@ -36,7 +36,7 @@ abstract class AbstractPackage implements ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($key)
+    public function offsetExists($key): bool
     {
         return array_key_exists($key, $this->data);
     }
@@ -48,6 +48,7 @@ abstract class AbstractPackage implements ArrayAccess
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($key)
     {
         return $this->data[$key];
@@ -61,7 +62,7 @@ abstract class AbstractPackage implements ArrayAccess
      *
      * @return void
      */
-    public function offsetSet($key, $value)
+    public function offsetSet($key, $value): void
     {
         $this->data[$key] = $value;
     }
@@ -73,7 +74,7 @@ abstract class AbstractPackage implements ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($key)
+    public function offsetUnset($key): void
     {
         unset($this->data[$key]);
     }
