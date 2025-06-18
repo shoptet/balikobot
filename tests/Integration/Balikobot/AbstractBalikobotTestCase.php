@@ -16,7 +16,7 @@ abstract class AbstractBalikobotTestCase extends AbstractTestCase
      *
      * @return \Inspirum\Balikobot\Services\Balikobot
      */
-    protected function newBalikobot(string $apiUser = null, string $apiKey = null): Balikobot
+    protected function newBalikobot(?string $apiUser = null, ?string $apiKey = null): Balikobot
     {
         return new Balikobot(
             new Requester(

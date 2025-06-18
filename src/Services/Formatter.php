@@ -29,7 +29,7 @@ class Formatter
      *
      * @return array<array<string,mixed>>
      */
-    public function normalizePostCodesResponse(array $response, string $country = null): array
+    public function normalizePostCodesResponse(array $response, ?string $country = null): array
     {
         $country = $response['country'] ?? $country;
 

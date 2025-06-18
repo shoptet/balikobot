@@ -93,12 +93,12 @@ class OrderedPackage
         string $shipper,
         string $batchId,
         string $carrierId,
-        string $trackUrl = null,
-        string $labelUrl = null,
-        string $carrierIdSwap = null,
+        ?string $trackUrl = null,
+        ?string $labelUrl = null,
+        ?string $carrierIdSwap = null,
         array $pieces = [],
-        string $finalCarrierId = null,
-        string $finalTrackUrl = null
+        ?string $finalCarrierId = null,
+        ?string $finalTrackUrl = null
     ) {
         $this->packageId      = $packageId;
         $this->shipper        = $shipper;

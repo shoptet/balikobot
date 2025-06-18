@@ -42,7 +42,7 @@ class OrderedPackageCollection implements ArrayAccess, Countable, IteratorAggreg
      *
      * @param string|null $shipper
      */
-    public function __construct(string $shipper = null)
+    public function __construct(?string $shipper = null)
     {
         $this->shipper = $shipper;
     }
