@@ -13,7 +13,7 @@ class UnauthorizedException extends AbstractException
      * @param int             $statusCode
      * @param \Throwable|null $previous
      */
-    public function __construct(string $message = null, int $statusCode = 401, Throwable $previous = null)
+    public function __construct(?string $message = null, int $statusCode = 401, ?Throwable $previous = null)
     {
         parent::__construct([], $statusCode, $previous, $message);
     }

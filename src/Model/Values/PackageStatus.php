@@ -41,7 +41,7 @@ class PackageStatus
      * @param string         $description
      * @param \DateTime|null $date
      */
-    public function __construct(float $id, string $type, string $name, string $description, DateTime $date = null)
+    public function __construct(float $id, string $type, string $name, string $description, ?DateTime $date = null)
     {
         $this->id          = $id;
         $this->type        = $type;

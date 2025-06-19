@@ -16,7 +16,7 @@ abstract class AbstractClientTestCase extends AbstractTestCase
      *
      * @return \Inspirum\Balikobot\Services\Client
      */
-    protected function newClient(string $apiUser = null, string $apiKey = null): Client
+    protected function newClient(?string $apiUser = null, ?string $apiKey = null): Client
     {
         return new Client(
             new Requester(

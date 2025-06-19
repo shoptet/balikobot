@@ -41,8 +41,8 @@ abstract class AbstractException extends RuntimeException implements ExceptionIn
     public function __construct(
         array $response = [],
         int $statusCode = 500,
-        Throwable $previous = null,
-        string $message = null
+        ?Throwable $previous = null,
+        ?string $message = null
     ) {
         // set response data
         $this->response = $response;

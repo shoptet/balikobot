@@ -18,8 +18,8 @@ class BadRequestException extends AbstractException
     public function __construct(
         array $response,
         int $statusCode = 400,
-        Throwable $previous = null,
-        string $message = null
+        ?Throwable $previous = null,
+        ?string $message = null
     ) {
         $this->setErrors($response);
 

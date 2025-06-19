@@ -50,7 +50,7 @@ class OrderedShipment
         array $packageIds,
         string $handoverUrl,
         string $labelsUrl,
-        string $fileUrl = null
+        ?string $fileUrl = null
     ) {
         $this->orderId     = $orderId;
         $this->shipper     = $shipper;

@@ -483,7 +483,7 @@ class Balikobot
      *
      * @throws \Inspirum\Balikobot\Contracts\ExceptionInterface
      */
-    public function getBranchesForShipperService(string $shipper, ?string $service, string $country = null): iterable
+    public function getBranchesForShipperService(string $shipper, ?string $service, ?string $country = null): iterable
     {
         $useFullBranchRequest = Shipper::hasFullBranchesSupport($shipper, $service);
 
@@ -512,11 +512,11 @@ class Balikobot
         string $shipper,
         string $country,
         string $city,
-        string $postcode = null,
-        string $street = null,
-        int $maxResults = null,
-        float $radius = null,
-        string $type = null
+        ?string $postcode = null,
+        ?string $street = null,
+        ?int $maxResults = null,
+        ?float $radius = null,
+        ?string $type = null
     ): iterable {
         $branches = $this->client->getBranchesForLocation(
             $shipper,
@@ -573,7 +573,7 @@ class Balikobot
      *
      * @throws \Inspirum\Balikobot\Contracts\ExceptionInterface
      */
-    public function getPostCodes(string $shipper, string $service, string $country = null): iterable
+    public function getPostCodes(string $shipper, string $service, ?string $country = null): iterable
     {
         foreach ($this->client->getPostCodes($shipper, $service, $country) as $postcode) {
             yield PostCode::newInstanceFromData($shipper, $service, $postcode);
@@ -758,7 +758,7 @@ class Balikobot
      *
      * @throws \Inspirum\Balikobot\Contracts\ExceptionInterface
      */
-    public function getAddServiceOptions(string $shipper, string $service = null, bool $fullData = false): array
+    public function getAddServiceOptions(string $shipper, ?string $service = null, bool $fullData = false): array
     {
         return $this->client->getAddServiceOptions($shipper, $service, $fullData);
     }
